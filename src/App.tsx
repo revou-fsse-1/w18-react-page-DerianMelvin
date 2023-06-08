@@ -5,11 +5,12 @@ import { ImageList } from "./components/ImageList";
 
 function App() {
   const [favourites, setFavourites] = useState<number>(0);
+  const [searchFilter, setSearchFilter] = useState<string>("");
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-[url('./assets/background.jpg')] bg-no-repeat bg-cover bg-fixed text-gray-200">
-      <Header favourites={favourites} />
-      <ImageList setFavourites={setFavourites} />
+      <Header favourites={favourites} searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
+      <ImageList searchFilter={searchFilter} setFavourites={setFavourites} />
       <Footer />
     </div>
   );
