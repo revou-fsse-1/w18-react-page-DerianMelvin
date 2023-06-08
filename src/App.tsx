@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { Header } from "./components/Header";
+import { ImageList } from "./components/ImageList";
 
 function App() {
   return (
-    <>
-      <h1>Hello There</h1>
-    </>
+    <div className="bg-gray-700 text-gray-200">
+      <Header />
+      <ImageList />
+    </div>
   );
 }
 
