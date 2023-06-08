@@ -3,7 +3,7 @@ import favourite from "../assets/favourite.svg";
 
 export const Header = () => {
   return (
-    <header className="flex flex-col justify-center items-center">
+    <header className="flex flex-col justify-center items-center backdrop-blur-md backdrop-brightness-[0.6]">
       <div className="flex self-end px-3 py-2 bg-black bg-opacity-40 rounded-bl-2xl">
         <img
           src={favourite}
