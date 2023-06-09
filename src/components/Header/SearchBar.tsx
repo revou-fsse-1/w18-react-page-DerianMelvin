@@ -23,7 +23,7 @@ export const SearchBar = ({
         placeholder="Search for..."
         value={searchFilter}
         onChange={(e) => handleSearchInput(e)}
-        className="w-4/5 px-4 py-2 mb-7 border-transparent rounded-xl text-black placeholder-slate-500 focus:outline-none"
+        className="w-4/5 max-w-6xl px-4 py-2 mb-7 border-transparent rounded-xl text-black placeholder-slate-500 focus:outline-none"
       />
     </div>
   );

@@ -35,7 +35,7 @@ export const ImageCard = ({
 
   const handleClassNameBySearchFilter = () => {
     return imgName.toLowerCase().includes(searchFilter.toLowerCase())
-      ? "w-48 h-48 flex flex-col relative transition-all duration-300 hover:scale-110 xl:hover:w-64 hover:z-50 hover:shadow-2xl"
+      ? "w-48 h-48 flex flex-col relative transition-all duration-300 hover:cursor-pointer hover:scale-110 xl:w-56 xl:h-56 xl:hover:w-72 hover:z-50 hover:shadow-2xl"
       : "hidden";
   };
 
@@ -52,7 +52,7 @@ export const ImageCard = ({
   return (
     <div className={handleClassNameBySearchFilter()}>
       <h3
-        onDoubleClick={toggleFavouriteImage}
+        onClick={toggleFavouriteImage}
         className="w-full h-20 absolute px-3 pt-2 pb-10 truncate rounded-2xl bg-gradient-to-b from-slate-950"
       >
         {imgName}
@@ -61,7 +61,7 @@ export const ImageCard = ({
         src={imgLink}
         alt={imgName}
         className="w-full h-full object-cover rounded-2xl"
-        onDoubleClick={toggleFavouriteImage}
+        onClick={toggleFavouriteImage}
       />
       {handleFavouriteIcon()}
     </div>
