@@ -23,7 +23,7 @@ export const SubscribePage = ({
 
   const handleOverlayClassName = () => {
     return subscribePageOpen
-      ? "min-h-screen min-w-full flex flex-col justify-center items-center text-black absolute backdrop-brightness-75"
+      ? "h-full min-w-full flex flex-col justify-center items-center text-black fixed overflow-y-auto backdrop-brightness-75"
       : "hidden";
   };
 

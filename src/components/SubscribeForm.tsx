@@ -100,7 +100,7 @@ export const SubscribeForm = ({ setFormSubmitted }: SubscribeFormProps) => {
       <button
         type="submit"
         onClick={(e) => handleFormSubmit(e)}
-        className="px-10 py-3 mt-4 text-xl rounded-lg text-white bg-green-600"
+        className="px-10 py-3 mt-4 text-xl rounded-lg text-white bg-green-600 transition-all duration-200 hover:bg-green-500"
       >
         Subscribe
       </button>

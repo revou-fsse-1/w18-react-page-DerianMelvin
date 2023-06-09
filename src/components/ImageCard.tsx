@@ -35,7 +35,7 @@ export const ImageCard = ({
 
   const handleClassNameBySearchFilter = () => {
     return imgName.toLowerCase().includes(searchFilter.toLowerCase())
-      ? "w-48 h-48 flex flex-col relative"
+      ? "w-48 h-48 flex flex-col relative transition-all duration-300 hover:scale-110 xl:hover:w-64 hover:z-50 hover:shadow-2xl"
       : "hidden";
   };
 

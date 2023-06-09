@@ -8,7 +8,7 @@ export const Footer = ({ setSubscribePageOpen }: FooterProps) => {
       <h2 className="text-2xl">Find out more about the Earth's vast beauty</h2>
       <button
         onClick={() => setSubscribePageOpen((prev) => !prev)}
-        className="px-10 py-3 text-xl rounded-lg text-white bg-green-600"
+        className="px-10 py-3 text-xl rounded-lg text-white bg-green-600 transition-all duration-200 hover:bg-green-500"
       >
         Subscribe
       </button>
