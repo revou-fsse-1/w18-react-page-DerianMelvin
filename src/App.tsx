@@ -11,10 +11,21 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-[url('./assets/background.jpg')] bg-no-repeat bg-cover bg-fixed text-gray-200">
-      <Header favourites={favourites} searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
+      <Header
+        favourites={favourites}
+        searchFilter={searchFilter}
+        setSearchFilter={setSearchFilter}
+      />
       <ImageList searchFilter={searchFilter} setFavourites={setFavourites} />
       <Footer setSubscribePageOpen={setSubscribePageOpen} />
-      <SubscribePage subscribePageOpen={subscribePageOpen} setSubscribePageOpen={setSubscribePageOpen} />
+      {subscribePageOpen ? (
+        <SubscribePage
+          subscribePageOpen={subscribePageOpen}
+          setSubscribePageOpen={setSubscribePageOpen}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
