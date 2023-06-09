@@ -1,4 +1,4 @@
-import { imageListData } from "../data/ImageListData";
+import { imageListData } from "../../data/ImageListData";
 import { ImageCard } from "./ImageCard";
 
 type ImageListProps = {

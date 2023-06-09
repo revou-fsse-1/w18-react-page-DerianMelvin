@@ -59,4 +59,14 @@ export const imageListData = [
     imgLink:
       "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
+  {
+    imgName: "Lavender Flower Field",
+    imgLink:
+      "https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
+  {
+    imgName: "Oljato-Monument Valley",
+    imgLink:
+      "https://images.pexels.com/photos/305535/pexels-photo-305535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  },
 ];

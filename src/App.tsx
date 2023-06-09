@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { ImageList } from "./components/ImageList";
-import { SubscribePage } from "./components/SubscribePage";
+import { Header } from "./components/Header/Header";
+import { ImageList } from "./components/ImageList/ImageList";
+import { SubscribePage } from "./components/SubscribePage/SubscribePage";
 
 function App() {
   const [favourites, setFavourites] = useState<number>(0);
