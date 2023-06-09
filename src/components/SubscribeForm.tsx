@@ -1,13 +1,53 @@
+import { useState } from "react";
+
 type SubscribeFormProps = {
   setFormSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+type FormFields = {
+  username: string;
+  email: string;
+};
+
 export const SubscribeForm = ({ setFormSubmitted }: SubscribeFormProps) => {
-  const handleSubscribeEvent = (
+  const [formFields, setFormFields] = useState<FormFields>({
+    username: "",
+    email: "",
+  });
+
+  const validateUsername = () => {
+    if (!formFields.username || formFields.username.length < 3) {
+      return false;
+    }
+    return true;
+  };
+
+  const validateEmail = () => {
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (!formFields.email || !formFields.email.match(emailRegex)) {
+      return false;
+    }
+    return true;
+  };
+
+  const handleFormInput = (e: React.FocusEvent<HTMLInputElement, Element>) => {
+    setFormFields((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleFormSubmit = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    setFormSubmitted((prev) => !prev);
+
+    if (!validateUsername() || !validateEmail()) {
+      return;
+    }
+
+    setFormSubmitted(true);
   };
 
   return (
@@ -26,9 +66,17 @@ export const SubscribeForm = ({ setFormSubmitted }: SubscribeFormProps) => {
           name="username"
           id="username"
           placeholder="John Doe"
+          onBlur={(e) => handleFormInput(e)}
           className="px-4 py-2 border-transparent rounded-xl text-black placeholder-slate-500 focus:outline-none"
         />
-        <span className="text-sm text-red-600">Invalid username</span>
+        <span
+          id="usernameError"
+          className={`text-sm text-red-600 ${
+            validateUsername() ? "hidden" : ""
+          }`}
+        >
+          Invalid username
+        </span>
       </div>
 
       <div className="w-4/5 flex flex-col gap-1">
@@ -38,14 +86,20 @@ export const SubscribeForm = ({ setFormSubmitted }: SubscribeFormProps) => {
           name="email"
           id="email"
           placeholder="myemail@gmail.com"
+          onBlur={(e) => handleFormInput(e)}
           className="px-4 py-2 border-transparent rounded-xl text-black placeholder-slate-500 focus:outline-none"
         />
-        <span className="text-sm text-red-600">Invalid email</span>
+        <span
+          id="emailError"
+          className={`text-sm text-red-600 ${validateEmail() ? "hidden" : ""}`}
+        >
+          Invalid email
+        </span>
       </div>
 
       <button
         type="submit"
-        onClick={(e) => handleSubscribeEvent(e)}
+        onClick={(e) => handleFormSubmit(e)}
         className="px-10 py-3 mt-4 text-xl rounded-lg text-white bg-green-600"
       >
         Subscribe
